@@ -30,6 +30,3 @@ function changeTheme() {
 }
 
 refs.themeSwitch.addEventListener('change', () => changeTheme());
-
-
-console.log(document.querySelector('.theme-switch__track'))
