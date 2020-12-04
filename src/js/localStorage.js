@@ -15,8 +15,7 @@ let currentThemeParse = JSON.parse(localStorage.getItem('currentTheme'));
 
 refs.body.classList.add(currentThemeParse);
 
-refs.themeSwitch.addEventListener('change', () => {
-
+function changeTheme() {
     if (refs.body.classList.contains(parsedTheme.DARK)) {
         refs.body.classList.remove(parsedTheme.DARK);
         refs.body.classList.add(parsedTheme.LIGHT);
@@ -28,5 +27,9 @@ refs.themeSwitch.addEventListener('change', () => {
         localStorage.removeItem('currentTheme', JSON.stringify(parsedTheme.LIGHT));
         localStorage.setItem('currentTheme', JSON.stringify(parsedTheme.DARK));
     };
+}
 
-});
+refs.themeSwitch.addEventListener('change', () => changeTheme());
+
+
+console.log(document.querySelector('.theme-switch__track'))
