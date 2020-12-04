@@ -17,17 +17,16 @@ refs.body.classList.add(currentThemeParse);
 
 refs.themeSwitch.addEventListener('change', () => {
 
-    if (refs.body.classList.contains(parsedTheme.LIGHT)) {
-        refs.body.classList.remove(parsedTheme.LIGHT);
-        localStorage.setItem('currentTheme', JSON.stringify(parsedTheme.DARK));
-        const dark = JSON.parse(localStorage.getItem('currentTheme'));
-        refs.body.classList.add(dark);
-        
-    } else {
+    if (refs.body.classList.contains(parsedTheme.DARK)) {
         refs.body.classList.remove(parsedTheme.DARK);
         refs.body.classList.add(parsedTheme.LIGHT);
         localStorage.removeItem('currentTheme', JSON.stringify(parsedTheme.DARK));
         localStorage.setItem('currentTheme', JSON.stringify(parsedTheme.LIGHT));
+    } else {
+        refs.body.classList.remove(parsedTheme.LIGHT);
+        refs.body.classList.add(parsedTheme.DARK);
+        localStorage.removeItem('currentTheme', JSON.stringify(parsedTheme.LIGHT));
+        localStorage.setItem('currentTheme', JSON.stringify(parsedTheme.DARK));
     };
 
 });
