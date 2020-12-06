@@ -33,4 +33,4 @@ function changeTheme() {
     };
 }
 
-refs.themeSwitch.addEventListener('change', () => changeTheme());
+refs.themeSwitch.addEventListener('change', changeTheme);
