@@ -15,6 +15,10 @@ let currentThemeParse = JSON.parse(localStorage.getItem('currentTheme'));
 
 refs.body.classList.add(currentThemeParse);
 
+if (refs.body.classList.contains(parsedTheme.DARK)) {
+  refs.themeSwitch.checked = true;
+}
+
 function changeTheme() {
     if (refs.body.classList.contains(parsedTheme.DARK)) {
         refs.body.classList.remove(parsedTheme.DARK);
